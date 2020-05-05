@@ -1,0 +1,24 @@
+{
+  "name": "jamstack-wp-gallery",
+  "version": "1.0.0",
+  "description": "A gallery of articles using a Wordpress API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Xabadu/jamstack-wp-gallery.git"
+  },
+  "keywords": [
+    "javascript",
+    "react",
+    "wordpress"
+  ],
+  "author": "Fernando Larrañaga <xabadu@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Xabadu/jamstack-wp-gallery/issues"
+  },
+  "homepage": "https://github.com/Xabadu/jamstack-wp-gallery#readme"
+}
