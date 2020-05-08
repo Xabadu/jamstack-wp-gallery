@@ -1,0 +1,35 @@
+html
+  font-family: 'Poppins', sans-serif;
+.grid
+  display grid
+  grid-template-columns repeat(auto-fill, minmax(300px, 1fr))
+  grid-gap 32px
+.item
+  border 1px solid tomato
+  border-radius 4px
+
+.item-container
+  padding 10px
+  img
+    width 100%
+  a
+    text-decoration none
+    color #2d2d2d
+
+.categories-grid
+  display grid
+  grid-template-columns repeat(auto-fill, minmax(150px, 1fr))
+  grid-gap 30px
+  margin-bottom 30px
+
+  button
+    background white
+    color gray
+    border 1px solid gray
+    border-radius 2px
+    text-align center
+    padding 5px
+
+    &:focus
+      background gray
+      color white
