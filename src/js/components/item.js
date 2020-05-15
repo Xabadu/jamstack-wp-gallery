@@ -15,13 +15,18 @@ const Item = (props) => {
 
   return (
     <div className="item-container">
-      <img src={image} alt="Tutorial" />
+      <div className="item-container-image">
+        <img src={image} alt="Tutorial" />
+        <div className="item-container-links">
+          <a href={data.link}>Ir al tutorial</a>
+          <a href="#">Más >></a>
+        </div>
+      </div>
       <a href={data.link}>
         <p>{data.title.rendered}</p>
       </a>
       <small>Especial Tutoriales de Halloween</small>
     </div>
-    // link a la categoria
   );
 };
 
