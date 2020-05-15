@@ -9,6 +9,7 @@ html
   border-radius 4px
 
 .item-container
+  overflow hidden
   padding 10px
   img
     width 100%
@@ -33,3 +34,28 @@ html
     &:focus
       background gray
       color white
+
+.item-container-image
+  position relative
+  z-index 1
+  &:hover img
+    transform translateY(-50%)
+
+  img 
+    position relative
+    z-index 3
+    transition transform 250ms
+
+  .item-container-links
+    position absolute
+    bottom 10px
+    z-index 2
+    background #2d2d2d
+    width 100%
+    text-align center
+    padding 5px 0
+    a
+      background-color tomato
+      color white
+      margin-right 5px
+    // z-index al medio => 2
