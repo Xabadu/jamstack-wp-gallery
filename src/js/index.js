@@ -7,7 +7,7 @@ const Article = lazy(() => import("./containers/article"));
 
 const App = () => (
   <Router>
-    <Suspense fallback={() => <p>Loading...</p>}>
+    <Suspense fallback={<p>Loading...</p>}>
       <Switch>
         <Route path="/" exact component={Home} />
         <Route path="/:article" component={Article} />
