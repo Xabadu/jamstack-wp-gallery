@@ -1,22 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 const Item = (props) => {
-  const [image, setImage] = useState("");
   const { data } = props;
-
-  useEffect(() => {
-    fetch(data._links["wp:featuredmedia"][0].href)
-      .then((response) => response.json())
-      .then((response) => {
-        setImage(response.source_url);
-      })
-      .catch((err) => console.error(err));
-  }, []);
-
+  const [ image ] = data._embedded['wp:featuredmedia'];
+  
   return (
     <div className="item-container">
       <div className="item-container-image">
-        <img src={image} alt="Tutorial" />
+        <img src={image.source_url} alt="Tutorial" />
         <div className="item-container-links">
           <a href={data.link}>Ir al tutorial</a>
           <a href="#">Más >></a>
