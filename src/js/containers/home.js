@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 import Categories from "../components/categories";
+import Container from "../components/container";
 import Grid from "../components/grid";
 
 const BASE_URL = "https://comolohago.cl/wp-json/wp/v2";
@@ -43,10 +44,10 @@ const Home = () => {
   };
 
   return (
-    <>
+    <Container>
       <Categories categories={categories} onClick={handleClick} />
       <Grid tutorials={filteredTutorials} />
-    </>
+    </Container>
   );
 };
 
