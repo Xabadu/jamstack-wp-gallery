@@ -9,9 +9,9 @@ const Categories = (props) => {
 
   return (
     <div className="categories-grid">
-      <button onClick={() => onClick()}>Todos</button>
+      <button type="button" onClick={() => onClick()}>Todos</button>
       {categories.map((category) => (
-        <button onClick={() => onClick(category.id)} key={category.id} href="#">
+        <button type="button" onClick={() => onClick(category.id)} key={category.id}>
           {category.name}
         </button>
       ))}
