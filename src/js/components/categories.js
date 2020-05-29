@@ -1,22 +1,48 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import PropTypes from "prop-types";
+import axios from "axios";
+
+const BASE_URL = "https://comolohago.cl/wp-json/wp/v2";
+const GET_CATEGORIES_ENDPOINT = `${BASE_URL}/categories?include=343,24,182,1695,440`;
 
 const Categories = (props) => {
-  const { categories, onClick } = props;
+  const [categories, setCategories] = useState([]);
+  const { onClick } = props;
 
-  if (categories.length === 0) {
-    return <div />;
-  }
+  // if (categories.length === 0) {
+  //   return <div />;
+  // }
+
+  useEffect(() => {
+    axios
+      .get(GET_CATEGORIES_ENDPOINT)
+      .then(({ data }) => {
+        setCategories(data);
+      })
+      .catch((error) => console.error(error));
+  }, []);
 
   return (
-    <div className="categories-grid">
-      <button type="button" onClick={() => onClick()}>Todos</button>
+    <div className="categories-grid" data-testid="categories-grid-element">
+      <button type="button" onClick={() => onClick()}>
+        Todos
+      </button>
       {categories.map((category) => (
-        <button type="button" onClick={() => onClick(category.id)} key={category.id}>
+        <button
+          type="button"
+          onClick={() => onClick(category.id)}
+          key={category.id}
+        >
           {category.name}
         </button>
       ))}
     </div>
   );
+};
+
+Categories.propTypes = {
+  categories: PropTypes.array.isRequired,
+  onClick: PropTypes.func.isRequired,
 };
 
 export default Categories;

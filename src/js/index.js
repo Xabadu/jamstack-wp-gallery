@@ -1,6 +1,7 @@
 import React, { lazy, Suspense, useEffect, useState } from "react";
 import ReactDOM from "react-dom";
 import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
+import axios from "axios";
 
 const BASE_URL = "https://comolohago.cl/wp-json/wp/v2";
 const GET_CATEGORIES_ENDPOINT = `${BASE_URL}/categories?include=343,24,182,1695,440`;
@@ -16,20 +17,20 @@ const App = () => {
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
-    fetch(GET_TUTORIALS_ENDPOINT)
-      .then((response) => response.json())
-      .then((response) => {
-        setTutorials(response);
-        setFilteredTutorials(response);
+    axios
+      .get(GET_TUTORIALS_ENDPOINT)
+      .then(({ data }) => {
+        setTutorials(data);
+        setFilteredTutorials(data);
       })
       .catch((error) => console.error(error));
   }, []);
 
   useEffect(() => {
-    fetch(GET_CATEGORIES_ENDPOINT)
-      .then((response) => response.json())
-      .then((response) => {
-        setCategories(response);
+    axios
+      .get(GET_CATEGORIES_ENDPOINT)
+      .then(({ data }) => {
+        setCategories(data);
       })
       .catch((error) => console.error(error));
   }, []);

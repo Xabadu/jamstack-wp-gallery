@@ -3,16 +3,17 @@ import { Helmet } from "react-helmet";
 import Container from "../components/container";
 
 const Article = (props) => {
+  const { detail } = props;
   function createMarkup(content) {
     return { __html: content };
   }
 
-  if (props.detail && props.detail.content) {
-    const { rendered } = props.detail.content;
+  if (detail && detail.content) {
+    const { rendered } = detail.content;
     return (
       <>
         <Helmet>
-          <title>{props.detail.title.rendered}</title>
+          <title>{detail.title.rendered}</title>
         </Helmet>
         <Container>
           <div className="tutorial-container">
