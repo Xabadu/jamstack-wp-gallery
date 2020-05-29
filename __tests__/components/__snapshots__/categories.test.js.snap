@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`El componente renderea 1`] = `
+<div>
+  <div />
+</div>
+`;
+
+exports[`El componente renderea 2`] = `
+<div>
+  <div
+    class="categories-grid"
+    data-testid="categories-grid-element"
+  >
+    <button
+      type="button"
+    >
+      Todos
+    </button>
+    <button
+      type="button"
+    >
+      Comida
+    </button>
+  </div>
+</div>
+`;

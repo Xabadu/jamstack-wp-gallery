@@ -2,6 +2,17 @@
   "extends": ["airbnb", "airbnb/hooks", "prettier"],
   "plugins": ["prettier"],
   "rules": {
-    "prettier/prettier": "error"
+    "prettier/prettier": "error",
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [".js", ".jsx"]
+      }
+    ],
+    "react/prop-types": "off",
+    "react/forbid-prop-types": "off",
+    "jsx-a11y/anchor-is-valid": "off",
+    "react/no-danger": "off",
+    "no-underscore-dangle": "off"
   }
 }

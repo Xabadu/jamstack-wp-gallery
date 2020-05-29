@@ -10,7 +10,10 @@ const Item = (props) => {
         <img src={image.source_url} alt="Tutorial" />
         <div className="item-container-links">
           <a href={data.slug}>Ir al tutorial</a>
-          <a href="#">Más {">>"}</a>
+          <a href="#">
+            Más
+            {">>"}
+          </a>
         </div>
       </div>
       <a href={data.link}>
