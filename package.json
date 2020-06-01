@@ -6,6 +6,8 @@
   "scripts": {
     "build": "parcel build src/index.html",
     "lint": "eslint src --fix",
+    "package": "docker build . -t jamstack-wp-gallery:latest",
+    "containerized": "docker run --rm --name jamstack-wp-gallery -p 1234:1234 jamstack-wp-gallery",
     "start": "parcel src/index.html",
     "test": "jest --watch",
     "test:coverage": "jest --coverage",
