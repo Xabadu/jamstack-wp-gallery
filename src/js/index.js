@@ -19,7 +19,7 @@ const App = () => {
       .get(GET_TUTORIALS_ENDPOINT)
       .then(({ data }) => {
         const dataFormated = data.reduce((acc, curr) => {
-          const {id, title, slug, categories, content, _embedded  } = curr;
+          const { id, title, slug, categories, content, _embedded } = curr;
 
           return acc.concat({
             id,
@@ -27,8 +27,8 @@ const App = () => {
             categories,
             title: title.rendered,
             content: content.rendered,
-            image: _embedded['wp:featuredmedia'][0],
-          })
+            image: _embedded["wp:featuredmedia"][0],
+          });
         }, []);
 
         setTutorials(dataFormated);
@@ -61,10 +61,7 @@ const App = () => {
             path="/"
             exact
             render={() => (
-              <Home
-                handleClick={handleClick}
-                tutorials={filteredTutorials}
-              />
+              <Home handleClick={handleClick} tutorials={filteredTutorials} />
             )}
           />
           <Route
