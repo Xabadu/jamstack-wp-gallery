@@ -3,8 +3,7 @@ import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 import ReactDOM from "react-dom";
 import axios from "axios";
 
-const BASE_URL = "https://comolohago.cl/wp-json/wp/v2";
-const GET_TUTORIALS_ENDPOINT = `${BASE_URL}/posts?include=9149,193,9217,4583,9170,9260,7553,9185,4203,5234,5953,9218,9286&per_page=20&_embed`;
+import endpoints from "./config/endpoints";
 
 const Header = lazy(() => import("../js/components/header"));
 const Home = lazy(() => import("./containers/home"));
@@ -16,7 +15,7 @@ const App = () => {
 
   useEffect(() => {
     axios
-      .get(GET_TUTORIALS_ENDPOINT)
+      .get(endpoints.tutorials)
       .then(({ data }) => {
         const dataFormated = data.reduce((acc, curr) => {
           const { id, title, slug, categories, content, _embedded } = curr;
@@ -34,6 +33,7 @@ const App = () => {
         setTutorials(dataFormated);
         setFilteredTutorials(dataFormated);
       })
+      // eslint-disable-next-line no-console
       .catch((error) => console.error(error));
   }, []);
 

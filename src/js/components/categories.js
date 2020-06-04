@@ -2,8 +2,7 @@ import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import axios from "axios";
 
-const BASE_URL = "https://comolohago.cl/wp-json/wp/v2";
-const GET_CATEGORIES_ENDPOINT = `${BASE_URL}/categories?include=343,24,182,1695,440`;
+import endpoints from "../config/endpoints";
 
 const Categories = (props) => {
   const [categories, setCategories] = useState([]);
@@ -11,10 +10,11 @@ const Categories = (props) => {
 
   useEffect(() => {
     axios
-      .get(GET_CATEGORIES_ENDPOINT)
+      .get(endpoints.categories)
       .then(({ data }) => {
         setCategories(data);
       })
+      // eslint-disable-next-line no-console
       .catch((error) => console.error(error));
   }, []);
 
@@ -26,8 +26,8 @@ const Categories = (props) => {
       {categories.map((category) => (
         <button
           type="button"
-          onClick={() => onClick(category.id)}
           key={category.id}
+          onClick={() => onClick(category.id)}
         >
           {category.name}
         </button>
