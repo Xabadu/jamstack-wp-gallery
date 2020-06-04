@@ -9,10 +9,6 @@ const Categories = (props) => {
   const [categories, setCategories] = useState([]);
   const { onClick } = props;
 
-  // if (categories.length === 0) {
-  //   return <div />;
-  // }
-
   useEffect(() => {
     axios
       .get(GET_CATEGORIES_ENDPOINT)
@@ -41,7 +37,6 @@ const Categories = (props) => {
 };
 
 Categories.propTypes = {
-  categories: PropTypes.array.isRequired,
   onClick: PropTypes.func.isRequired,
 };
 

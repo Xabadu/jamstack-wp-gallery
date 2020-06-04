@@ -1,23 +1,23 @@
 import React from "react";
 import { Helmet } from "react-helmet";
+import { shape, string } from "prop-types";
+
 import Container from "../components/container";
 
-const Article = (props) => {
-  const { detail } = props;
+const Article = ({ detail }) => {
   function createMarkup(content) {
     return { __html: content };
   }
 
   if (detail && detail.content) {
-    const { rendered } = detail.content;
     return (
       <>
         <Helmet>
-          <title>{detail.title.rendered}</title>
+          <title>{detail.title}</title>
         </Helmet>
         <Container>
           <div className="tutorial-container">
-            <div dangerouslySetInnerHTML={createMarkup(rendered)} />
+            <div dangerouslySetInnerHTML={createMarkup(detail.content)} />
           </div>
         </Container>
       </>
@@ -25,6 +25,13 @@ const Article = (props) => {
   }
 
   return <p>Cargando...</p>;
+};
+
+Article.propTypes = {
+  detail: shape({
+    title: string,
+    content: string,
+  }).isRequired,
 };
 
 export default Article;

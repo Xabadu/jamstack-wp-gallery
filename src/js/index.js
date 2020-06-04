@@ -1,10 +1,9 @@
 import React, { lazy, Suspense, useEffect, useState } from "react";
-import ReactDOM from "react-dom";
 import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
+import ReactDOM from "react-dom";
 import axios from "axios";
 
 const BASE_URL = "https://comolohago.cl/wp-json/wp/v2";
-const GET_CATEGORIES_ENDPOINT = `${BASE_URL}/categories?include=343,24,182,1695,440`;
 const GET_TUTORIALS_ENDPOINT = `${BASE_URL}/posts?include=9149,193,9217,4583,9170,9260,7553,9185,4203,5234,5953,9218,9286&per_page=20&_embed`;
 
 const Header = lazy(() => import("../js/components/header"));
@@ -14,23 +13,26 @@ const Article = lazy(() => import("./containers/article"));
 const App = () => {
   const [tutorials, setTutorials] = useState([]);
   const [filteredTutorials, setFilteredTutorials] = useState([]);
-  const [categories, setCategories] = useState([]);
 
   useEffect(() => {
     axios
       .get(GET_TUTORIALS_ENDPOINT)
       .then(({ data }) => {
-        setTutorials(data);
-        setFilteredTutorials(data);
-      })
-      .catch((error) => console.error(error));
-  }, []);
+        const dataFormated = data.reduce((acc, curr) => {
+          const {id, title, slug, categories, content, _embedded  } = curr;
 
-  useEffect(() => {
-    axios
-      .get(GET_CATEGORIES_ENDPOINT)
-      .then(({ data }) => {
-        setCategories(data);
+          return acc.concat({
+            id,
+            slug,
+            categories,
+            title: title.rendered,
+            content: content.rendered,
+            image: _embedded['wp:featuredmedia'][0],
+          })
+        }, []);
+
+        setTutorials(dataFormated);
+        setFilteredTutorials(dataFormated);
       })
       .catch((error) => console.error(error));
   }, []);
@@ -62,7 +64,6 @@ const App = () => {
               <Home
                 handleClick={handleClick}
                 tutorials={filteredTutorials}
-                categories={categories}
               />
             )}
           />
