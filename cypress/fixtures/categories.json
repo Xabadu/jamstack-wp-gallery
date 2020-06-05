@@ -1,0 +1,168 @@
+[
+  {
+    "id": 182,
+    "count": 135,
+    "description": "",
+    "link": "https://www.comolohago.cl/category/comida/",
+    "name": "Super Comida",
+    "slug": "comida",
+    "taxonomy": "category",
+    "parent": 0,
+    "meta": [],
+    "_links": {
+      "self": [
+        { "href": "https://www.comolohago.cl/wp-json/wp/v2/categories/182" }
+      ],
+      "collection": [
+        { "href": "https://www.comolohago.cl/wp-json/wp/v2/categories" }
+      ],
+      "about": [
+        {
+          "href": "https://www.comolohago.cl/wp-json/wp/v2/taxonomies/category"
+        }
+      ],
+      "wp:post_type": [
+        {
+          "href": "https://www.comolohago.cl/wp-json/wp/v2/posts?categories=182"
+        }
+      ],
+      "curies": [
+        { "name": "wp", "href": "https://api.w.org/{rel}", "templated": true }
+      ]
+    }
+  },
+  {
+    "id": 1695,
+    "count": 3,
+    "description": "",
+    "link": "https://www.comolohago.cl/category/manualidades/cosplay/",
+    "name": "Cosplay",
+    "slug": "cosplay",
+    "taxonomy": "category",
+    "parent": 24,
+    "meta": [],
+    "_links": {
+      "self": [
+        { "href": "https://www.comolohago.cl/wp-json/wp/v2/categories/1695" }
+      ],
+      "collection": [
+        { "href": "https://www.comolohago.cl/wp-json/wp/v2/categories" }
+      ],
+      "about": [
+        {
+          "href": "https://www.comolohago.cl/wp-json/wp/v2/taxonomies/category"
+        }
+      ],
+      "up": [
+        {
+          "embeddable": true,
+          "href": "https://www.comolohago.cl/wp-json/wp/v2/categories/24"
+        }
+      ],
+      "wp:post_type": [
+        {
+          "href": "https://www.comolohago.cl/wp-json/wp/v2/posts?categories=1695"
+        }
+      ],
+      "curies": [
+        { "name": "wp", "href": "https://api.w.org/{rel}", "templated": true }
+      ]
+    }
+  },
+  {
+    "id": 24,
+    "count": 184,
+    "description": "",
+    "link": "https://www.comolohago.cl/category/manualidades/",
+    "name": "Manualidades",
+    "slug": "manualidades",
+    "taxonomy": "category",
+    "parent": 0,
+    "meta": [],
+    "_links": {
+      "self": [
+        { "href": "https://www.comolohago.cl/wp-json/wp/v2/categories/24" }
+      ],
+      "collection": [
+        { "href": "https://www.comolohago.cl/wp-json/wp/v2/categories" }
+      ],
+      "about": [
+        {
+          "href": "https://www.comolohago.cl/wp-json/wp/v2/taxonomies/category"
+        }
+      ],
+      "wp:post_type": [
+        {
+          "href": "https://www.comolohago.cl/wp-json/wp/v2/posts?categories=24"
+        }
+      ],
+      "curies": [
+        { "name": "wp", "href": "https://api.w.org/{rel}", "templated": true }
+      ]
+    }
+  },
+  {
+    "id": 440,
+    "count": 206,
+    "description": "",
+    "link": "https://www.comolohago.cl/category/tecnologia/",
+    "name": "Tecnologia",
+    "slug": "tecnologia",
+    "taxonomy": "category",
+    "parent": 0,
+    "meta": [],
+    "_links": {
+      "self": [
+        { "href": "https://www.comolohago.cl/wp-json/wp/v2/categories/440" }
+      ],
+      "collection": [
+        { "href": "https://www.comolohago.cl/wp-json/wp/v2/categories" }
+      ],
+      "about": [
+        {
+          "href": "https://www.comolohago.cl/wp-json/wp/v2/taxonomies/category"
+        }
+      ],
+      "wp:post_type": [
+        {
+          "href": "https://www.comolohago.cl/wp-json/wp/v2/posts?categories=440"
+        }
+      ],
+      "curies": [
+        { "name": "wp", "href": "https://api.w.org/{rel}", "templated": true }
+      ]
+    }
+  },
+  {
+    "id": 343,
+    "count": 174,
+    "description": "",
+    "link": "https://www.comolohago.cl/category/trucos/",
+    "name": "Trucos",
+    "slug": "trucos",
+    "taxonomy": "category",
+    "parent": 0,
+    "meta": [],
+    "_links": {
+      "self": [
+        { "href": "https://www.comolohago.cl/wp-json/wp/v2/categories/343" }
+      ],
+      "collection": [
+        { "href": "https://www.comolohago.cl/wp-json/wp/v2/categories" }
+      ],
+      "about": [
+        {
+          "href": "https://www.comolohago.cl/wp-json/wp/v2/taxonomies/category"
+        }
+      ],
+      "wp:post_type": [
+        {
+          "href": "https://www.comolohago.cl/wp-json/wp/v2/posts?categories=343"
+        }
+      ],
+      "curies": [
+        { "name": "wp", "href": "https://api.w.org/{rel}", "templated": true }
+      ]
+    }
+  }
+]
