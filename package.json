@@ -6,9 +6,12 @@
   "scripts": {
     "build": "parcel build src/index.html",
     "lint": "eslint src --fix",
+    "package": "docker build . -t jamstack-wp-gallery:latest",
+    "containerized": "docker run --rm --name jamstack-wp-gallery -p 1234:1234 jamstack-wp-gallery",
     "start": "parcel src/index.html",
     "test": "jest --watch",
     "test:coverage": "jest --coverage",
+    "test:cypress": "cypress open",
     "test:update": "jest -u"
   },
   "repository": {
@@ -46,6 +49,7 @@
     "husky": "^4.2.5",
     "jest": "^26.0.1",
     "lint-staged": "^10.2.2",
+    "netlify-plugin-cypress": "^1.3.11",
     "parcel-bundler": "^1.12.4",
     "prettier": "2.0.5",
     "stylus": "^0.54.7"
@@ -66,6 +70,7 @@
     "axios": "^0.19.2",
     "core-js": "^2.6.11",
     "html-react-parser": "^0.11.1",
+    "cypress": "^4.7.0",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
