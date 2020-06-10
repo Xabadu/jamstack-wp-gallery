@@ -1,6 +1,12 @@
 {
+  "parser": "babel-eslint",
   "extends": ["airbnb", "airbnb/hooks", "prettier"],
   "plugins": ["prettier"],
+  "env": {
+    "browser": true,
+    "node": true,
+    "jest": true
+  },
   "rules": {
     "prettier/prettier": "error",
     "react/jsx-filename-extension": [
@@ -8,11 +14,6 @@
       {
         "extensions": [".js", ".jsx"]
       }
-    ],
-    "react/prop-types": "off",
-    "react/forbid-prop-types": "off",
-    "jsx-a11y/anchor-is-valid": "off",
-    "react/no-danger": "off",
-    "no-underscore-dangle": "off"
+    ]
   }
 }
