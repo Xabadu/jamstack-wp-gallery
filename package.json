@@ -67,7 +67,7 @@
     ]
   },
   "dependencies": {
-    "axios": "^0.21.1",
+    "axios": "^0.21.2",
     "core-js": "^2.6.11",
     "cypress": "^4.11.0",
     "html-react-parser": "^0.11.1",
